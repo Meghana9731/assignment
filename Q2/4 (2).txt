@@ -1,0 +1,32 @@
+import random
+print("Hello world")
+
+board=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+n=4
+for i in range (4):
+    j=random.randint(0,3)
+    board[i][j]=1
+    
+    
+diagonalflag=0
+horizontalflag=0
+verticalflag=0
+
+print(board)
+
+for a in range(n):
+    for b in range(n-1):
+        if(a==b):
+            if board[a][b]==1 and board[a+1][b+1]==1:
+                diagonalflag=1
+            break
+            if (board[a][b]==1 and board[a][b+1]==1):
+                horizontalflag=1
+            break
+            if (board[a][b]==1 and board[a+1][b]==1):
+                horizontalflag=1
+            break
+              
+              
+if (diagonalflag!=1 and horizontalflag!=1 and verticalflag!=1):
+    print(board)
